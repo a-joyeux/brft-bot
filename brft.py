@@ -1,7 +1,7 @@
 # This example requires the 'message_content' intent.
 
 import discord
-from datetime import datetime
+import os
 
 intents = discord.Intents.default()
 intents.message_content = True
@@ -21,4 +21,4 @@ async def on_voice_state_update(member, before, after):
        # Code here...
 
 
-client.run(process.env.TOKEN)
+client.run(os.environ.get('TOKEN'))
